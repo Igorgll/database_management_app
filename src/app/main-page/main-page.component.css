@@ -51,9 +51,12 @@ textarea {
   margin-top: 1.8rem;
   background: #3b3853;
 
-  padding: 10px;
+  padding-top: 6px;
+  padding-bottom: 14px;
+  padding-right: 11px;
+  padding-left: 10px;
 
-  height: 45px;
+  height: 35px;
 
   border: solid 1px #7a7a8c;
   border-top-left-radius: 15px;
