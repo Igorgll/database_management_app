@@ -35,7 +35,7 @@
 .login_box h1 {
   font-size: 3rem;
   text-align: center;
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
 
   color: #ffffff;
   font-weight: bold;
@@ -111,6 +111,14 @@ textarea {
 
 #login_button button:hover {
   background: #d8d8d8;
+}
+
+.links {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+  margin-top: 1rem;
 }
 
 @media (max-width: 425px) {
