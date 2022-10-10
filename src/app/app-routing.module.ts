@@ -6,7 +6,7 @@ import { MainPageComponent } from './main-page/main-page.component';
 import { SignupComponent } from './signup/signup.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: 'main_page', pathMatch: 'full' },
+  { path: '', redirectTo: 'signup', pathMatch: 'full' },
 
   { path: 'login', component: LoginComponent },
   { path: 'signup', component: SignupComponent },

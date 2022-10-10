@@ -2,19 +2,22 @@
   <div class="login_box">
     <div class="login_wrapper">
       <h1>Sign up</h1>
-      <input type="text" placeholder="Name" />
+      <label for="name"></label>
+      <input [(ngModel)]="user.name" type="text" placeholder="Name" name="name" id="name" />
       <br />
-      <input type="text" placeholder="Email" />
+      <label for="email"></label>
+      <input [(ngModel)]="user.email" type="text" placeholder="Email" />
       <br />
-      <input type="text" placeholder="Password" />
+      <label for="password"></label>
+      <input (input)="confirmPassword($event)" type="password" placeholder="Password" />
       <br />
-      <div id="login_button"><button>Create Account</button></div>
+      <label for="confirmPassword"></label>
+      <input [(ngModel)]="user.password" type="password" placeholder="Confirm password" />
+      <br />
+      <div id="login_button"><button (click)="signUp()">Create Account</button></div>
       <div class="links">
         <div class="signup">
           <a href="" routerLink="/login">Back</a>
-        </div>
-        <div class="signup">
-          <a href="">Sign up</a>
         </div>
       </div>
     </div>

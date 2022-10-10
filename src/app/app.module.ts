@@ -8,6 +8,10 @@ import { SignupComponent } from './signup/signup.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { MainPageComponent } from './main-page/main-page.component';
 
+import { HttpClientModule } from '@angular/common/http'
+import { FormsModule } from '@angular/forms';
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -18,6 +22,8 @@ import { MainPageComponent } from './main-page/main-page.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    HttpClientModule,
+    FormsModule,
     FontAwesomeModule
   ],
   providers: [],
