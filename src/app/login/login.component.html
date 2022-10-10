@@ -2,11 +2,13 @@
   <div class="login_box">
     <div class="login_wrapper">
       <h1>Login</h1>
-      <input type="text" placeholder="Email" />
+      <label for="email"></label>
+      <input [(ngModel)]="userLogin.email" type="text" placeholder="Email" />
       <br />
-      <input type="text" placeholder="Password" />
+      <label for="password"></label>
+      <input [(ngModel)]="userLogin.password" type="password" placeholder="Password" />
       <br />
-      <div id="login_button"><button>Log in</button></div>
+      <div id="login_button"><button (click)="login()">Log in</button></div>
       <div class="signup"><a routerLink="/signup" href="">Sign up</a></div>
     </div>
   </div>

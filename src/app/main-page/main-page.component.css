@@ -139,8 +139,8 @@ textarea {
 .clients_list {
   display: flex;
   flex-direction: row;
-  gap: 3rem;
-  list-style: none;
+  justify-content: space-evenly;
+  /* gap: 3rem; */
 
   border-bottom: solid 1px #7a7a8c;
   border-left: solid 1px #7a7a8c;
@@ -160,22 +160,23 @@ textarea {
   cursor: pointer;
 }
 
-.clients_list li:first-child {
-  padding-right: 50px;
+
+/* .clients_list :first-child {
+  margin-right: 2.3rem
+}
+
+.clients_list :nth-child(2) {
+  padding-left: 38px;
 }
 
 .clients_list :nth-child(3) {
-  padding-left: 96px;
+  padding-left: 2rem;
 }
 
-.clients_list :nth-child(5) {
-  padding-left: 60px;
-}
-
-.clients_list :nth-child(6) {
+.clients_list :nth-child(4) {
   padding-left: 50px;
 }
 
-.clients_list :nth-child(7) {
+.clients_list :nth-child(5) {
   padding-left: 20px;
-}
+} */

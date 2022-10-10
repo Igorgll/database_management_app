@@ -1,9 +1,8 @@
-import { User } from "./User";
-
 export class Clients {
     public id: number
-    public name: string
-    public email: string
-    public address: string
+    public Name: string
+    public lastName: string
+    public Email: string
+    public Address: string
     public postalCode: string
 }
