@@ -40,4 +40,13 @@ export class ClientsComponent implements OnInit {
     })
   }
 
+  postNewClient() {
+    this.clientsService.createNewClient(this.client).subscribe((resp: Clients) => {
+      this.client = resp;
+      alert('New Client added!')
+      this.getAllClients();
+      this.client = new Clients();
+
+    });
+  }
 }

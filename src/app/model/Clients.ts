@@ -1,8 +1,8 @@
 export class Clients {
     public id: number
-    public Name: string
+    public name: string
     public lastName: string
-    public Email: string
-    public Address: string
+    public email: string
+    public address: string
     public postalCode: string
 }
