@@ -2,6 +2,6 @@ export const environment = {
   production: true,
   token: '',
   name: '',
-  user: '',
+  email: '',
   id: 0,
 };

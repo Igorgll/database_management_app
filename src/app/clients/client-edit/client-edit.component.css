@@ -1,0 +1,28 @@
+.modal-content {
+    background: var(--background);
+    border: 1px solid var(--border);
+  }
+  
+  .modal-header {
+    border-bottom: 1px solid var(--border);
+  }
+  
+  .modal-footer {
+    border-top: 1px solid var(--border);
+  }
+  
+  #name-input, #lastName-input, #email-input, #postalCode-input, #address-input {
+    background: var(--categories-background);
+    color: var(--white);
+    border: 1px solid var(--border);
+  }
+
+  .close_button {
+    background: var(--categories-background);
+    color: var(--white);
+  }
+  
+  .create_button {
+    background: var(--categorie-color);
+    color: var(--white);
+  }

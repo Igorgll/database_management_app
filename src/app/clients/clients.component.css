@@ -142,6 +142,7 @@ textarea {
   #recipient-name {
     background: var(--categories-background);
     color: var(--white);
+    border: 1px solid var(--border);
   }
   
   .close_button {
@@ -151,9 +152,5 @@ textarea {
   
   .create_button {
     background: var(--categorie-color);
-    color: var(--white);
-  }
-  
-  #exampleModalLabel {
     color: var(--white);
   }

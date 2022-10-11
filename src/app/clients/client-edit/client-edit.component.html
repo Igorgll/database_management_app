@@ -1,0 +1,102 @@
+<!-- UPDATE CLIENT MODAL -->
+
+<div
+    class="modal fade"
+    id="updateClient"
+    tabindex="-1"
+    aria-labelledby="updateClientLabel"
+    aria-hidden="true"
+  >
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5 text-white" id="updateClientLabel">
+            Update Client
+          </h1>
+          <button
+            type="button"
+            class="btn-close btn-close-white"
+            data-bs-dismiss="modal"
+            aria-label="Close"
+          ></button>
+        </div>
+        <div class="modal-body">
+          <form>
+            <div class="mb-3">
+              <label
+                for="name-input"
+                class="col-form-label text-white"
+                aria-placeholder="Name"
+                >Name:</label
+              >
+              <input
+              name="nameUpdate" 
+              type="text" 
+              class="form-control" 
+              id="name-input" 
+              [(ngModel)]="client.name"
+              />
+            </div>
+            <div class="mb-3">
+              <label for="lastName-input" class="col-form-label text-white"
+                >Last Name:</label
+              >
+              <input
+              name="lastNameUpdate" 
+              type="text" 
+              class="form-control" 
+              id="lastName-input" 
+              [(ngModel)]="client.email"
+              />
+            </div>
+            <div class="mb-3">
+              <label for="email-input" class="col-form-label text-white"
+                >Email:</label
+              >
+              <input 
+              name="email"
+              type="email" 
+              class="form-control" 
+              id="email-input" 
+              [(ngModel)]="client.email"
+              />
+            </div>
+            <div class="mb-3">
+              <label for="postalCode-input" class="col-form-label text-white"
+                >Postal Code:</label
+              >
+              <input
+              name="postalCode" 
+              type="text" 
+              class="form-control" 
+              id="postalCode-input" 
+              [(ngModel)]="client.postalCode"
+              />
+            </div>
+            <div class="mb-3">
+              <label for="address-input" class="col-form-label text-white"
+                >Address:</label
+              >
+              <input 
+              name="address"
+              type="text" 
+              class="form-control" 
+              id="address-input" 
+              [(ngModel)]="client.address"
+              />
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button
+            type="button"
+            class="btn close_button"
+            data-bs-dismiss="modal"
+          >
+            Close
+          </button>
+          <button type="button" class="btn create_button" (click)="updateClient()">Update Client</button>
+        </div>
+      </div>
+    </div>
+  </div>
