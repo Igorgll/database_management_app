@@ -34,6 +34,26 @@ input {
   --background: #29253c;
 }
 
+*::-webkit-scrollbar {
+  width: 12px;
+}
+
+*::-webkit-scrollbar-track {
+  width: 12px;
+  box-shadow: inset 0 0 .3rem var(--background);
+  background-color: var(--background);
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: var(--categories-background);
+  border-radius: 20px;
+}
+
+:root {
+  scrollbar-color: var(--categories-background) !important;
+  scrollbar-width: thin !important;
+}
+
 a {
   color: inherit;
   text-decoration: none;
