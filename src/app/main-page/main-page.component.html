@@ -9,29 +9,28 @@
     <input type="text" placeholder="Search" />
     <i class="fa fa-plus fa-lg" aria-hidden="true"></i>
   </div>
-  <div class="dashboard">
-    <table [cellSpacing]="0" *ngFor="let item of listClients">
+  <div class="dashboard" >
+    <table [cellSpacing]="0">
       <thead>
         <tr>
-          <th width="13%">Id</th>
           <th width="13%">Name</th>
           <th width="13%">Last Name</th>
-          <th width="18%">Email</th>
-          <th width="18%">Address</th>
-          <th>Postal Code</th>
+          <th width="25%">Email</th>
+          <th width="20%">Address</th>
+          <th width="12%">Postal Code</th>
+          <th width="3%"></th>
+          <th></th>
         </tr>
       </thead>
-      <tbody>
+      <tbody *ngFor="let item of listClients">
         <tr>
           <td>{{ item.Name }}</td>
           <td>{{ item.lastName }}</td>
           <td>{{ item.Email }}</td>
           <td>{{ item.Address }}</td>
           <td>{{ item.postalCode }}</td>
-          <td>
-            These are red.<i class="fa fa-trash-o" aria-hidden="true"></i
-            ><i class="fa fa-pencil" aria-hidden="true"></i>
-          </td>
+          <td><i class="fa fa-pencil" aria-hidden="true"></i></td>
+          <td><i class="fa fa-trash-o" aria-hidden="true"></i></td>
         </tr>
       </tbody>
     </table>

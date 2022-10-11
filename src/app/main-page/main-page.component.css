@@ -88,6 +88,10 @@ textarea {
   width: 100%;
 }
 
+.dashboard table {
+  width: 100%;
+}
+
 .dashboard th {
   text-align: start;
   padding-left: 10px;
@@ -129,15 +133,10 @@ tbody i {
   transition: 0.2s;
 }
 
-tbody i:hover {
-  color: var(--icons-hover);
+tbody i {
   cursor: pointer;
 }
 
-tbody i:first-child {
-  margin-left: 25%;
-}
-
-tbody i:last-child {
-  margin-left: 20%;
+tbody i:hover {
+  color: var(--icons-hover);
 }
