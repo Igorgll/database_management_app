@@ -140,3 +140,31 @@ tbody i {
 tbody i:hover {
   color: var(--icons-hover);
 }
+
+.modal-content {
+  background: var(--background);
+  border: 1px solid var(--border);
+}
+
+.modal-header {
+  border-bottom: 1px solid var(--border);
+}
+
+.modal-footer {
+  border-top: 1px solid var(--border);
+}
+
+#recipient-name {
+  background: var(--categories-background);
+  color: var(--white);
+}
+
+.close_button {
+  background: var(--categories-background);
+  color: var(--white);
+}
+
+.create_button {
+  background: var(--categorie-color);
+  color: var(--white);
+}

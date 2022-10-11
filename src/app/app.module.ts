@@ -10,21 +10,22 @@ import { MainPageComponent } from './main-page/main-page.component';
 
 import { HttpClientModule } from '@angular/common/http'
 import { FormsModule } from '@angular/forms';
-
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     SignupComponent,
-    MainPageComponent
+    MainPageComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    NgbModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
