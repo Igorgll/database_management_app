@@ -10,38 +10,30 @@
     <i class="fa fa-plus fa-lg" aria-hidden="true"></i>
   </div>
   <div class="dashboard">
-    <div class="dashboard_categories">
-      <ul> 
-        <li>Name</li>
-        <li>Last Name</li>
-        <li>Email</li>
-        <li>Address</li>
-        <li>Postal Code</li>
-      </ul>
-    </div>
-    <div class="main_content">
-
-      <tbody>
-        <tr class="clients_list" *ngFor="let item of listClients">
-            <td>{{item.Name}}</td>
-            <td>{{item.lastName}}</td>
-            <td>{{item.Email}}</td>
-            <td>{{item.Address}}</td>
-            <td>{{item.postalCode}}</td>
-            <td><i class="fa fa-pencil" aria-hidden="true"></i></td>
-            <td><i class="fa fa-trash-o" aria-hidden="true"></i></td>
+    <table [cellSpacing]="0" *ngFor="let item of listClients">
+      <thead>
+        <tr>
+          <th width="13%">Id</th>
+          <th width="13%">Name</th>
+          <th width="13%">Last Name</th>
+          <th width="18%">Email</th>
+          <th width="18%">Address</th>
+          <th>Postal Code</th>
         </tr>
-    </tbody>
-
-      <!-- <ul class="clients_list" *ngFor="let client of listClients">
-        <li>{{client.name}}</li>
-        <li>{{client.lastName}}</li>
-        <li>{{client.email}}</li>
-        <li>{{client.address}}</li>
-        <li>{{client.postalCode}}</li>
-        <li><i class="fa fa-pencil" aria-hidden="true"></i></li>
-        <li><i class="fa fa-trash-o" aria-hidden="true"></i></li>
-      </ul> -->
-    </div>
+      </thead>
+      <tbody>
+        <tr>
+          <td>{{ item.Name }}</td>
+          <td>{{ item.lastName }}</td>
+          <td>{{ item.Email }}</td>
+          <td>{{ item.Address }}</td>
+          <td>{{ item.postalCode }}</td>
+          <td>
+            These are red.<i class="fa fa-trash-o" aria-hidden="true"></i
+            ><i class="fa fa-pencil" aria-hidden="true"></i>
+          </td>
+        </tr>
+      </tbody>
+    </table>
   </div>
 </div>

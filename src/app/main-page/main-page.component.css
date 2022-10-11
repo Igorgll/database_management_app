@@ -82,101 +82,62 @@ textarea {
 }
 
 .dashboard {
+  margin-top: 3rem;
   display: flex;
   flex-direction: column;
   width: 100%;
 }
 
-.dashboard_categories {
-  display: flex;
-  margin-top: 1.8rem;
-  background: #3b3853;
-
-  padding-top: 6px;
-  padding-bottom: 14px;
-  padding-right: 11px;
+.dashboard th {
+  text-align: start;
   padding-left: 10px;
-
-  height: 35px;
-
-  border: solid 1px #7a7a8c;
-  border-top-left-radius: 15px;
-  border-top-right-radius: 15px;
+  padding-right: 10px;
+  padding-top: 3px;
+  padding-bottom: 3px;
+  color: var(--categorie-color);
+  background: var(--categories-background);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
 }
 
-.dashboard_categories ul {
-  display: flex;
-  flex-direction: row;
-  gap: 3rem;
-  list-style: none;
-}
-.dashboard_categories li {
-  color: #9898ad;
-  text-transform: uppercase;
+.dashboard th:first-child {
+  border-left: 1px solid var(--border);
+  border-top-left-radius: 20px;
 }
 
-.dashboard_categories li:first-child {
-  padding-right: 50px;
+.dashboard th:last-child {
+  border-right: 1px solid var(--border);
+  border-top-right-radius: 20px;
+  width: 192px;
 }
 
-.dashboard_categories :nth-child(2) {
-  padding-right: 50px;
-}
-
-.dashboard_categories :nth-child(3) {
-  padding-right: 142px;
-}
-
-.dashboard_categories :nth-child(4) {
-  padding-right: 100px;
-}
-
-.main_content {
-  display: flex;
-  flex-direction: column;
-}
-
-.clients_list {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
-  /* gap: 3rem; */
-
-  border-bottom: solid 1px #7a7a8c;
-  border-left: solid 1px #7a7a8c;
-  border-right: solid 1px #7a7a8c;
-
-  color: #fefefe;
-
+.dashboard td {
   padding: 10px;
+  border-bottom: 1px solid var(--border);
+  color: var(--white);
 }
 
-.clients_list i {
+.dashboard td:first-child {
+  border-left: 1px solid var(--border);
+}
+
+.dashboard td:last-child {
+  border-right: 1px solid var(--border);
+}
+
+tbody i {
   transition: 0.2s;
 }
 
-.clients_list i:hover {
-  color: #b5b5b5;
+tbody i:hover {
+  color: var(--icons-hover);
   cursor: pointer;
 }
 
-
-/* .clients_list :first-child {
-  margin-right: 2.3rem
+tbody i:first-child {
+  margin-left: 25%;
 }
 
-.clients_list :nth-child(2) {
-  padding-left: 38px;
+tbody i:last-child {
+  margin-left: 20%;
 }
-
-.clients_list :nth-child(3) {
-  padding-left: 2rem;
-}
-
-.clients_list :nth-child(4) {
-  padding-left: 50px;
-}
-
-.clients_list :nth-child(5) {
-  padding-left: 20px;
-} */
