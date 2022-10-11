@@ -32,11 +32,6 @@ export class ClientEditComponent implements OnInit {
     this.clientsService.updateClient(this.client).subscribe((resp: Clients)=>{
       this.client = resp
       alert('Client updated!')
-      
-      environment.token = ''
-      environment.name = ''
-      environment.email = ''
-      environment.id = 0
 
       this.getAllClients();
       this.client = new Clients();
