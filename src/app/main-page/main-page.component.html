@@ -1,67 +1,117 @@
 <div class="wrapper">
   <div class="title_div">
-    <h1>Clients List</h1>
+    <h1>{{ title }}</h1>
     <a href="" routerLink="/login"
       >Exit <i class="fa fa-sign-out fa-lg" aria-hidden="true"></i
     ></a>
   </div>
   <div class="search_bar">
-    <input type="text" placeholder="Search" />
-    <i class="fa fa-plus fa-lg" aria-hidden="true" data-bs-toggle="modal" data-bs-target="#createNewClient"></i>
+    <input type="text" placeholder="Search for a client..." [(ngModel)]="searchText" autocomplete="off" />
+    <i
+      class="fa fa-plus fa-lg"
+      aria-hidden="true"
+      data-bs-toggle="modal"
+      data-bs-target="#createNewClient"
+    ></i>
   </div>
-  <div class="dashboard" >
+  <div class="dashboard">
     <table [cellSpacing]="0">
-        <tr>
-          <th width="13%">Name</th>
-          <th width="13%">Last Name</th>
-          <th width="25%">Email</th>
-          <th width="20%">Address</th>
-          <th width="12%">Postal Code</th>
-          <th></th>
-        </tr>
-        <tr *ngFor="let item of listClients">
-          <td>{{ item.Name }}</td>
-          <td>{{ item.lastName }}</td>
-          <td>{{ item.Email }}</td>
-          <td>{{ item.Address }}</td>
-          <td>{{ item.postalCode }}</td>
-          <td><i class="fa fa-pencil" aria-hidden="true" data-bs-toggle="modal" data-bs-target="#updateClient"></i><i class="fa fa-trash-o" aria-hidden="true" data-bs-toggle="modal" data-bs-target="#deleteClient"></i></td>
-        </tr>
+      <tr *ngFor="let item of categories">
+        <th width="13%">{{ item.first }}</th>
+        <th width="13%">{{ item.second }}</th>
+        <th width="25%">{{ item.third }}</th>
+        <th width="25%">{{ item.fourth }}</th>
+        <th width="19.5%">{{ item.fifth }}</th>
+        <th></th>
+      </tr>
+      <tr *ngFor="let item of listClients | filter:searchText">
+        <td>{{ item.Name }}</td>
+        <td>{{ item.lastName }}</td>
+        <td>{{ item.Email }}</td>
+        <td>{{ item.Address }}</td>
+        <td>{{ item.postalCode }}</td>
+        <td>
+          <i
+            class="fa fa-pencil"
+            aria-hidden="true"
+            data-bs-toggle="modal"
+            data-bs-target="#updateClient"
+          ></i
+          ><i
+            class="fa fa-trash-o"
+            aria-hidden="true"
+            data-bs-toggle="modal"
+            data-bs-target="#deleteClient"
+          ></i>
+        </td>
+      </tr>
     </table>
   </div>
-  <div class="modal fade" id="createNewClient" tabindex="-1" aria-labelledby="createNewClientLabel" aria-hidden="true">
+  <div
+    class="modal fade"
+    id="createNewClient"
+    tabindex="-1"
+    aria-labelledby="createNewClientLabel"
+    aria-hidden="true"
+  >
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
-          <h1 class="modal-title fs-5 text-white" id="createNewClientLabel">Create New Client</h1>
-          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+          <h1 class="modal-title fs-5 text-white" id="createNewClientLabel">
+            {{ create }}
+          </h1>
+          <button
+            type="button"
+            class="btn-close btn-close-white"
+            data-bs-dismiss="modal"
+            aria-label="Close"
+          ></button>
         </div>
         <div class="modal-body">
           <form>
             <div class="mb-3">
-              <label for="recipient-name" class="col-form-label text-white" aria-placeholder="Name">Name:</label>
-              <input type="text" class="form-control" id="recipient-name">
+              <label
+                for="recipient-name"
+                class="col-form-label text-white"
+                aria-placeholder="Name"
+                >Name:</label
+              >
+              <input type="text" class="form-control" id="recipient-name" />
             </div>
             <div class="mb-3">
-              <label for="recipient-name" class="col-form-label text-white">Last Name:</label>
-              <input type="text" class="form-control" id="recipient-name">
+              <label for="recipient-name" class="col-form-label text-white"
+                >Last Name:</label
+              >
+              <input type="text" class="form-control" id="recipient-name" />
             </div>
             <div class="mb-3">
-              <label for="recipient-name" class="col-form-label text-white">Email:</label>
-              <input type="text" class="form-control" id="recipient-name">
+              <label for="recipient-name" class="col-form-label text-white"
+                >Email:</label
+              >
+              <input type="text" class="form-control" id="recipient-name" />
             </div>
             <div class="mb-3">
-              <label for="recipient-name" class="col-form-label text-white">Address:</label>
-              <input type="text" class="form-control" id="recipient-name">
+              <label for="recipient-name" class="col-form-label text-white"
+                >Address:</label
+              >
+              <input type="text" class="form-control" id="recipient-name" />
             </div>
             <div class="mb-3">
-              <label for="recipient-name" class="col-form-label text-white">Postal Code:</label>
-              <input type="text" class="form-control" id="recipient-name">
+              <label for="recipient-name" class="col-form-label text-white"
+                >Postal Code:</label
+              >
+              <input type="text" class="form-control" id="recipient-name" />
             </div>
           </form>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn close_button" data-bs-dismiss="modal" >Close</button>
+          <button
+            type="button"
+            class="btn close_button"
+            data-bs-dismiss="modal"
+          >
+            Close
+          </button>
           <button type="button" class="btn create_button">Create Client</button>
         </div>
       </div>
@@ -69,39 +119,71 @@
   </div>
 
   <!-- UPDATE MODAL -->
-  <div class="modal fade" id="updateClient" tabindex="-1" aria-labelledby="updateClientLabel" aria-hidden="true">
+  <div
+    class="modal fade"
+    id="updateClient"
+    tabindex="-1"
+    aria-labelledby="updateClientLabel"
+    aria-hidden="true"
+  >
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
-          <h1 class="modal-title fs-5 text-white" id="updateClientLabel">Update Client</h1>
-          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+          <h1 class="modal-title fs-5 text-white" id="updateClientLabel">
+            {{ update }}
+          </h1>
+          <button
+            type="button"
+            class="btn-close btn-close-white"
+            data-bs-dismiss="modal"
+            aria-label="Close"
+          ></button>
         </div>
         <div class="modal-body">
           <form>
             <div class="mb-3">
-              <label for="recipient-name" class="col-form-label text-white" aria-placeholder="Name">Name:</label>
-              <input type="text" class="form-control" id="recipient-name">
+              <label
+                for="recipient-name"
+                class="col-form-label text-white"
+                aria-placeholder="Name"
+                >Name:</label
+              >
+              <input type="text" class="form-control" id="recipient-name" />
             </div>
             <div class="mb-3">
-              <label for="recipient-name" class="col-form-label text-white">Last Name:</label>
-              <input type="text" class="form-control" id="recipient-name">
+              <label for="recipient-name" class="col-form-label text-white"
+                >Last Name:</label
+              >
+              <input type="text" class="form-control" id="recipient-name" />
             </div>
             <div class="mb-3">
-              <label for="recipient-name" class="col-form-label text-white">Email:</label>
-              <input type="text" class="form-control" id="recipient-name">
+              <label for="recipient-name" class="col-form-label text-white"
+                >Email:</label
+              >
+              <input type="text" class="form-control" id="recipient-name" />
             </div>
             <div class="mb-3">
-              <label for="recipient-name" class="col-form-label text-white">Address:</label>
-              <input type="text" class="form-control" id="recipient-name">
+              <label for="recipient-name" class="col-form-label text-white"
+                >Address:</label
+              >
+              <input type="text" class="form-control" id="recipient-name" />
             </div>
             <div class="mb-3">
-              <label for="recipient-name" class="col-form-label text-white">Postal Code:</label>
-              <input type="text" class="form-control" id="recipient-name">
+              <label for="recipient-name" class="col-form-label text-white"
+                >Postal Code:</label
+              >
+              <input type="text" class="form-control" id="recipient-name" />
             </div>
           </form>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn close_button" data-bs-dismiss="modal" >Close</button>
+          <button
+            type="button"
+            class="btn close_button"
+            data-bs-dismiss="modal"
+          >
+            Close
+          </button>
           <button type="button" class="btn create_button">Update Client</button>
         </div>
       </div>
@@ -109,22 +191,38 @@
   </div>
 
   <!-- DELETE CLIENT MODAL -->
-  <div class="modal fade" id="deleteClient" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div
+    class="modal fade"
+    id="deleteClient"
+    tabindex="-1"
+    aria-labelledby="exampleModalLabel"
+    aria-hidden="true"
+  >
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
           <h1 class="modal-title fs-5" id="exampleModalLabel">Delete Client</h1>
-          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+          <button
+            type="button"
+            class="btn-close btn-close-white"
+            data-bs-dismiss="modal"
+            aria-label="Close"
+          ></button>
         </div>
         <div class="modal-body">
           <p class="text-light">Are you sure you want to delete client:</p>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn close_button" data-bs-dismiss="modal">Close</button>
+          <button
+            type="button"
+            class="btn close_button"
+            data-bs-dismiss="modal"
+          >
+            Close
+          </button>
           <button type="button" class="btn create_button">Delete</button>
         </div>
       </div>
     </div>
   </div>
-
 </div>

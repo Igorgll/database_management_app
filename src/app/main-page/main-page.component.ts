@@ -10,6 +10,18 @@ import { environment } from 'src/environments/environment.prod';
   styleUrls: ['./main-page.component.css']
 })
 export class MainPageComponent implements OnInit {
+  
+  searchText: any;
+
+  //modals text
+  title = "Clients List"
+  create = "Create New Client"
+  update = "Update New Client"
+
+  categories = [
+    { first: 'Name', second: 'Last Name', third: 'Email', fourth: 'Address', fifth: 'Postal Code' },
+  ];
+
   client: Clients = new Clients();
   listClients: Clients[];
 
