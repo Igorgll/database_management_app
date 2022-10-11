@@ -89,7 +89,33 @@ textarea {
 }
 
 .dashboard table {
-  width: 100%;
+  max-width: 100%;
+  border-spacing: 0;
+  border-collapse: separate;
+}
+
+ table th:first-child, th:nth-child(2), th:nth-child(3), th:nth-child(4), th:nth-child(5) {
+  border-right: 1px solid var(--border) !important;
+}
+
+table td:first-child, td:nth-child(2), td:nth-child(3), td:nth-child(4), td:nth-child(5) {
+  border-right: 1px solid var(--border) !important;
+}
+
+table th:first-child {
+  border-top-left-radius: 10px;
+}
+
+table th:last-child {
+  border-top-right-radius: 10px;
+}
+
+table tr:last-child td:first-child {
+  border-bottom-left-radius: 10px;
+}
+
+table tr:last-child td:last-child {
+  border-bottom-right-radius: 10px;
 }
 
 .dashboard th {
@@ -106,13 +132,10 @@ textarea {
 
 .dashboard th:first-child {
   border-left: 1px solid var(--border);
-  border-top-left-radius: 20px;
 }
 
 .dashboard th:last-child {
   border-right: 1px solid var(--border);
-  border-top-right-radius: 20px;
-  width: 192px;
 }
 
 .dashboard td {
@@ -129,15 +152,19 @@ textarea {
   border-right: 1px solid var(--border);
 }
 
-tbody i {
+table i {
   transition: 0.2s;
 }
 
-tbody i {
+table i:nth-child(2) {
+  margin-left: 20px;
+}
+
+table i {
   cursor: pointer;
 }
 
-tbody i:hover {
+table i:hover {
   color: var(--icons-hover);
 }
 
