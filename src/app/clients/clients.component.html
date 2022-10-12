@@ -32,6 +32,7 @@
         <td>
           <i
             class="fa fa-pencil"
+            (click)="getId(item.Id)"
             aria-hidden="true"
             data-bs-toggle="modal"
             data-bs-target="#updateClient"
@@ -213,7 +214,7 @@
           >
             Close
           </button>
-          <button type="button" class="btn create_button">Update Client</button>
+          <button type="button" class="btn create_button" (click)="putClient()">Update Client</button>
         </div>
       </div>
     </div>

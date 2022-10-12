@@ -23,6 +23,7 @@ export class ClientsComponent implements OnInit {
 
   client: Clients = new Clients();
   listClients: Clients[];
+  idClient:number
 
   constructor(private router: Router, private clientsService: ClientService) { }
 
@@ -30,8 +31,24 @@ export class ClientsComponent implements OnInit {
     if (environment.token == "") {
       this.router.navigate(["/login"])
     }
-    
     this.getAllClients()
+    // this.findClientById(this.idClient)
+    console.log(this.idClient)
+  }
+
+  getId(id: number) {
+    this.idClient = id
+   
+   this.findClientById(this.idClient)
+   console.log(this.idClient)
+   // this.putClient()
+   }
+
+   findClientById(id: number){
+    this.clientsService.getClientById(id).subscribe((resp: Clients) => {
+      this.client = resp
+      console.log(resp)
+    })
   }
 
   getAllClients() {
@@ -47,6 +64,14 @@ export class ClientsComponent implements OnInit {
       this.getAllClients();
       this.client = new Clients();
 
+    });
+  }
+
+  putClient(){
+    this.clientsService.updateClient(this.client).subscribe((resp: Clients) => {
+      this.client = resp;
+      alert('Client updated successfully!')
+      console.log(resp)
     });
   }
 }
