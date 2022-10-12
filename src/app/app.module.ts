@@ -15,8 +15,6 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 // search module
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { ClientsComponent } from './clients/clients.component';
-import { ClientEditComponent } from './clients/client-edit/client-edit.component';
-import { ClientDeleteComponent } from './clients/client-delete/client-delete.component';
 
 @NgModule({
   declarations: [
@@ -25,8 +23,6 @@ import { ClientDeleteComponent } from './clients/client-delete/client-delete.com
     SignupComponent,
     MainPageComponent,
     ClientsComponent,
-    ClientEditComponent,
-    ClientDeleteComponent,
   ],
   imports: [
     BrowserModule,

@@ -23,7 +23,6 @@ export class ClientsComponent implements OnInit {
 
   client: Clients = new Clients();
   listClients: Clients[];
-  idClient:number
 
   constructor(private router: Router, private clientsService: ClientService) { }
 
@@ -49,14 +48,5 @@ export class ClientsComponent implements OnInit {
       this.client = new Clients();
 
     });
-  }
-
-  findClientByid(id: number){
-    this.clientsService.getClientById(id).subscribe((resp: Clients) => {
-      this.client = resp
-
-      this.client = new Clients()
-      this.getAllClients()
-    })
   }
 }
