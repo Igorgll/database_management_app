@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ClientService } from './../service/clients.service';
 import { Clients } from './../model/Clients';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { environment } from 'src/environments/environment.prod';
 
 @Component({
@@ -25,23 +25,26 @@ export class ClientsComponent implements OnInit {
   listClients: Clients[];
   idClient:number
 
-  constructor(private router: Router, private clientsService: ClientService) { }
+  constructor(
+    private router: Router, 
+    private clientsService: ClientService,
+    private route: ActivatedRoute,
+    ) { }
 
   ngOnInit() {
     if (environment.token == "") {
       this.router.navigate(["/login"])
     }
     this.getAllClients()
-    // this.findClientById(this.idClient)
-    console.log(this.idClient)
   }
-
+  
   getId(id: number) {
     this.idClient = id
-   
-   this.findClientById(this.idClient)
-   console.log(this.idClient)
-   // this.putClient()
+    this.findClientById(this.idClient)
+    this.router.navigate(['main_page/', this.idClient ])
+    this.idClient = this.route.snapshot.params['id']
+   console.log(id)
+  //  this.putClient()
    }
 
    findClientById(id: number){
@@ -63,15 +66,16 @@ export class ClientsComponent implements OnInit {
       alert('New Client added!')
       this.getAllClients();
       this.client = new Clients();
-
     });
   }
 
   putClient(){
+    console.log('clicked')
     this.clientsService.updateClient(this.client).subscribe((resp: Clients) => {
       this.client = resp;
-      alert('Client updated successfully!')
       console.log(resp)
+      alert('Client updated successfully!')
+      this.getAllClients();
     });
   }
 }

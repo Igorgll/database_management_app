@@ -21,7 +21,7 @@ export class ClientService {
     }
 
     getClientById(id: number):Observable<Clients> {
-        return this.http.get<Clients>(`http://localhost:3000/clients/${id}`)
+        return this.http.get<Clients>(`http://localhost:3000/clients/${id}`, this.token)
     }
 
     getClientByEmail(email: string):Observable<Clients> {
@@ -33,11 +33,11 @@ export class ClientService {
     }
 
     updateClient(client: Clients):Observable<Clients> {
-        return this.http.put<Clients>('http://localhost:3000/clients/', client, this.token)
+        return this.http.put<Clients>('http://localhost:3000/clients', client, this.token)
     }
 
     deleteClientById(id: number){
-        return this.http.delete(`http://localhost:3000/cliets/${id}`, this.token)
+        return this.http.delete(`http://localhost:3000/clients/${id}`, this.token)
     }
 
 }

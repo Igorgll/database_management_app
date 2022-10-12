@@ -11,6 +11,7 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'signup', component: SignupComponent },
   { path: 'main_page', component: MainPageComponent },
+  { path: 'main_page/:id', component: MainPageComponent },
 ];
 
 @NgModule({
