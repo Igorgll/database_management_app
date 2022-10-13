@@ -1,3 +1,4 @@
+import { CepServiceService } from './../service/cep-service.service';
 import { Component, OnInit } from '@angular/core';
 import { ClientService } from './../service/clients.service';
 import { Clients } from './../model/Clients';
@@ -18,7 +19,7 @@ export class ClientsComponent implements OnInit {
   update = "Update Client"
 
   categories = [
-    { first: 'Name', second: 'Last Name', third: 'Email', fourth: 'Address', fifth: 'Postal Code' },
+    { first: 'Name', second: 'Last Name', third: 'Postal Code', fourth: 'Address', fifth: 'City' },
   ];
 
   client: Clients = new Clients();
@@ -29,7 +30,18 @@ export class ClientsComponent implements OnInit {
     private router: Router, 
     private clientsService: ClientService,
     private route: ActivatedRoute,
+    private CepService: CepServiceService
     ) { }
+
+    // findCep(value, form) {
+    //   this.CepService.find(value).subscribe((data) => this.fillForm(data, form));
+    // }
+
+    // fillForm(data, form) {
+    //   form.setValue({
+
+    //   })
+    // }
 
   ngOnInit() {
     if (environment.token == "") {

@@ -102,12 +102,12 @@
           </div>
           <div class="mb-3">
             <label for="recipient-name" class="col-form-label text-white"
-              >Email:</label
+              >Postal Code:</label
             >
             <input
-            [(ngModel)]="client.email" 
-            name="email"
-            type="email" 
+            [(ngModel)]="client.postalCode" 
+            name="postalCode"
+            type="text" 
             class="form-control" 
             id="recipient-name"
             />
@@ -126,12 +126,12 @@
           </div>
           <div class="mb-3">
             <label for="recipient-name" class="col-form-label text-white"
-              >Postal Code:</label
+              >City:</label
             >
             <input
-            [(ngModel)]="client.postalCode" 
-            name="postalCode"
-            type="text" 
+            [(ngModel)]="client.city" 
+            name="email"
+            type="email" 
             class="form-control" 
             id="recipient-name"
             />
@@ -193,9 +193,9 @@
             </div>
             <div class="mb-3">
               <label for="recipient-name" class="col-form-label text-white"
-                >Email:</label
+                >Postal Code:</label
               >
-              <input type="text" class="form-control" id="recipient-name" name="email" [(ngModel)]="client.email"/>
+              <input type="text" class="form-control" id="recipient-name" name="postalCode" [(ngModel)]="client.postalCode"/>
             </div>
             <div class="mb-3">
               <label for="recipient-name" class="col-form-label text-white"
@@ -205,9 +205,9 @@
             </div>
             <div class="mb-3">
               <label for="recipient-name" class="col-form-label text-white"
-                >Postal Code:</label
+                >City:</label
               >
-              <input type="text" class="form-control" id="recipient-name" name="postalCode" [(ngModel)]="client.postalCode"/>
+              <input type="text" class="form-control" id="recipient-name" name="email" [(ngModel)]="client.city"/>
             </div>
           </form>
         </div>
