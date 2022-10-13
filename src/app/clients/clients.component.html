@@ -26,9 +26,9 @@
       <tr *ngFor="let item of listClients | filter:searchText">
         <td>{{ item.Name }}</td>
         <td>{{ item.lastName }}</td>
-        <td>{{ item.Email }}</td>
         <td>{{ item.Address }}</td>
         <td>{{ item.postalCode }}</td>
+        <td>{{ item.City }}</td>
         <td>
           <i
           (click)="getId(item.Id)"
@@ -130,8 +130,8 @@
             >
             <input
             [(ngModel)]="client.city" 
-            name="email"
-            type="email" 
+            name="city"
+            type="text" 
             class="form-control" 
             id="recipient-name"
             />

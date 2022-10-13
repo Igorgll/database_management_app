@@ -19,7 +19,7 @@ export class ClientsComponent implements OnInit {
   update = "Update Client"
 
   categories = [
-    { first: 'Name', second: 'Last Name', third: 'Postal Code', fourth: 'Address', fifth: 'City' },
+    { first: 'Name', second: 'Last Name', third: 'Address', fourth: 'postalCode', fifth: 'City' },
   ];
 
   client: Clients = new Clients();
