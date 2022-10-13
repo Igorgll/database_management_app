@@ -30,11 +30,10 @@ export class LoginComponent implements OnInit {
         environment.name = this.userLogin.email
         environment.id = this.userLogin.id
 
-        console.log(this.userLogin.token)
         this.router.navigate(['/main_page'])
       },
       error: err => {
-        if (err.status == 401) {
+        if (err.status == 404) {
           alert('Incorrect User or Password.')
         }
       }

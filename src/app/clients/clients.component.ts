@@ -86,7 +86,7 @@ export class ClientsComponent implements OnInit {
 
   delete(id: number) {
     this.clientsService.deleteClientById(id).subscribe(()=>{})
-    alert('Cliente apagado com sucesso!')
+    alert('Client deleted successfully!')
     this.getAllClients()
   }
 }
