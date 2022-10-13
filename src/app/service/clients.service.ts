@@ -32,8 +32,8 @@ export class ClientService {
         return this.http.post<Clients>('http://localhost:3000/clients', client,this.token)
     }
 
-    updateClient(client: Clients):Observable<Clients> {
-        return this.http.put<Clients>('http://localhost:3000/clients', client, this.token)
+    updateClient(id: number, client: Clients):Observable<Clients> {
+        return this.http.put<Clients>(`http://localhost:3000/clients/${id}`, client)
     }
 
     deleteClientById(id: number){

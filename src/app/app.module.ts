@@ -9,8 +9,10 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { MainPageComponent } from './main-page/main-page.component';
 
 import { HttpClientModule } from '@angular/common/http'
-import { FormsModule } from '@angular/forms';
+import {FormsModule} from '@angular/forms'
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { ReactiveFormsModule } from '@angular/forms';
+
 
 // search module
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
@@ -32,6 +34,7 @@ import { ClientsComponent } from './clients/clients.component';
     FontAwesomeModule,
     NgbModule,
     Ng2SearchPipeModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

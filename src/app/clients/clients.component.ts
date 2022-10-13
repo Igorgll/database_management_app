@@ -15,7 +15,7 @@ export class ClientsComponent implements OnInit {
   //modals text
   title = "Clients List"
   create = "Create New Client"
-  update = "Update New Client"
+  update = "Update Client"
 
   categories = [
     { first: 'Name', second: 'Last Name', third: 'Email', fourth: 'Address', fifth: 'Postal Code' },
@@ -42,15 +42,14 @@ export class ClientsComponent implements OnInit {
     this.idClient = id
     this.findClientById(this.idClient)
     this.router.navigate(['main_page/', this.idClient ])
-    this.idClient = this.route.snapshot.params['id']
-   console.log(id)
+    // this.idClient = this.route.snapshot.params['id']
+  //  console.log(id)
   //  this.putClient()
    }
 
    findClientById(id: number){
     this.clientsService.getClientById(id).subscribe((resp: Clients) => {
       this.client = resp
-      console.log(resp)
     })
   }
 
@@ -69,13 +68,24 @@ export class ClientsComponent implements OnInit {
     });
   }
 
-  putClient(){
-    console.log('clicked')
-    this.clientsService.updateClient(this.client).subscribe((resp: Clients) => {
+  putClient(id: number){
+    this.findClientById(this.idClient)  
+    console.log(this.client)
+    this.clientsService.updateClient(this.idClient, this.client).subscribe((resp: Clients) => {
+      
       this.client = resp;
+
       console.log(resp)
-      alert('Client updated successfully!')
-      this.getAllClients();
     });
+    console.log('clicked' + this.client)
+    alert('Client updated successfully!')
+    this.getAllClients();
+  }
+
+  delete(id: number) {
+    this.clientsService.deleteClientById(id).subscribe(()=>{})
+    alert('Cliente apagado com sucesso!')
+    this.getAllClients()
+    this.router.navigate(['/main_page'])
   }
 }
