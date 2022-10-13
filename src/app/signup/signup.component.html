@@ -6,7 +6,7 @@
       <input [(ngModel)]="user.name" type="text" placeholder="Name" name="name" id="name" />
       <br />
       <label for="email"></label>
-      <input [(ngModel)]="user.email" type="email" placeholder="Email" />
+      <input [(ngModel)]="user.email" type="email" placeholder="Email" id="email_input"/>
       <br />
       <label for="password"></label>
       <input (input)="confirmPassword($event)" type="password" placeholder="Password" />

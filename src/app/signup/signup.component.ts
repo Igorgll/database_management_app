@@ -29,7 +29,12 @@ export class SignupComponent implements OnInit {
   signUp() {
     if(this.user.password != this.checkPassword) {
       alert('Incorrect password.')
-    }else {
+    }else if(this.user.name.length > 15) {
+      alert('Name is too long, keep it under 15 characters.')
+    }else if (this.user.password.length < 6) {
+      alert('Password needs to have at least 6 characters.')
+    }
+    else {
       this.authService.signUp(this.user).subscribe((resp: User) => {
         this.user = resp 
         alert('User sign up successfully!')
