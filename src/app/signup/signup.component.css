@@ -57,7 +57,7 @@
   -webkit-backdrop-filter: blur(8px);
 }
 
-.login_wrapper input[type="text"],
+.login_wrapper input,
 textarea {
   background: #ffffff;
 
