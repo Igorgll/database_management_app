@@ -41,10 +41,6 @@ export class ClientsComponent implements OnInit {
   getId(id: number) {
     this.idClient = id
     this.findClientById(this.idClient)
-    this.router.navigate(['main_page/', this.idClient ])
-    // this.idClient = this.route.snapshot.params['id']
-  //  console.log(id)
-  //  this.putClient()
    }
 
    findClientById(id: number){
@@ -69,23 +65,16 @@ export class ClientsComponent implements OnInit {
   }
 
   putClient(id: number){
-    this.findClientById(this.idClient)  
-    console.log(this.client)
     this.clientsService.updateClient(this.idClient, this.client).subscribe((resp: Clients) => {
-      
-      this.client = resp;
-
-      console.log(resp)
-    });
-    console.log('clicked' + this.client)
+    this.client = resp;
     alert('Client updated successfully!')
     this.getAllClients();
+  });
   }
 
   delete(id: number) {
     this.clientsService.deleteClientById(id).subscribe(()=>{})
     alert('Cliente apagado com sucesso!')
     this.getAllClients()
-    this.router.navigate(['/main_page'])
   }
 }
