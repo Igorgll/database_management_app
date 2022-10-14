@@ -1,27 +1,21 @@
-# DatabaseManagement
+<h1 align="center">
+    Database Management App
+</h1>
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.2.5.
+## 💻 Projeto
+Esse projeto tem sua integração com a api [nodejs](https://nodejs.org/en/) e tem como intuíto o manuseamento de dados vindo diretamente da api integrada com o banco de dados Sql Server.
 
-## Development server
+## Links:
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+- [Github Back-end](https://github.com/Igorgll/node_api).
+- [Github Front-end](https://github.com/Igorgll/database_management_app)
+- [Deploy do projeto](https://database-management.netlify.app).
 
-## Code scaffolding
+## ℹ️ Infos
+Antes de tudo, para que o front-end funcione é necessário a execução da api através do npm. Você pode encontrar as instruções para a execução [aqui](https://github.com/Igorgll/node_api/blob/main/README.md).
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
-## Build
+## 🚀 Tecnologias
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+- [Angular](https://angular.io/)
+- [Bootstrap](https://getbootstrap.com/)
