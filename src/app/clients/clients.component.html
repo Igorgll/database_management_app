@@ -177,7 +177,7 @@
           ></button>
         </div>
         <div class="modal-body">
-          <form>
+          <form #f="ngForm">
             <div class="mb-3">
               <label
                 for="recipient-name"
@@ -197,7 +197,14 @@
               <label for="recipient-name" class="col-form-label text-white"
                 >Postal Code:</label
               >
-              <input type="text" class="form-control" id="recipient-name" name="postalCode" [(ngModel)]="client.postalCode"/>
+              <input 
+              type="text" 
+              class="form-control" 
+              id="recipient-name" 
+              name="postalCode" 
+              [(ngModel)]="client.postalCode" 
+              (blur)="consultaCep(client.postalCode, f)"
+              />
             </div>
             <div class="mb-3">
               <label for="recipient-name" class="col-form-label text-white"
