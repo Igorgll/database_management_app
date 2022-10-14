@@ -1,9 +1,11 @@
-import { CepServiceService } from './../service/cep-service.service';
 import { Component, OnInit } from '@angular/core';
 import { ClientService } from './../service/clients.service';
 import { Clients } from './../model/Clients';
 import { ActivatedRoute, Router } from '@angular/router';
 import { environment } from 'src/environments/environment.prod';
+import { map } from 'rxjs/operators';
+import { HttpClient } from '@angular/common/http';
+
 
 @Component({
   selector: 'app-clients',
@@ -36,18 +38,32 @@ export class ClientsComponent implements OnInit {
     private router: Router,
     private clientsService: ClientService,
     private route: ActivatedRoute,
-    private CepService: CepServiceService
+    private http:  HttpClient
   ) {}
 
-  // findCep(value, form) {
-  //   this.CepService.find(value).subscribe((data) => this.fillForm(data, form));
-  // }
+  consultaCep(cep:any, form:any) {
+    cep = cep.replace(/\D/g, '');
 
-  // fillForm(data, form) {
-  //   form.setValue({
+    if (cep != "") {
+      let validacep = /^[0-9]{8}$/;
 
-  //   })
-  // }
+      if (validacep.test(cep)) {
+        this.http.get(`//viacep.com.br/ws/${cep}/json/`)
+        .pipe(map((dados: any) => dados))
+        .subscribe(dados => this.populaDadosForm(dados, form));
+      }
+    }
+  }
+
+  populaDadosForm(dados:any, form:any) {
+    form.setValue({
+        name: null,
+        lastName: null,
+        postalCode: dados.cep,
+        address: dados.logradouro,
+        city: dados.localidade
+    })
+  }
 
   ngOnInit() {
     if (environment.token == '') {

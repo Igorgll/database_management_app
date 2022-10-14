@@ -67,12 +67,11 @@
           class="btn-close btn-close-white"
           data-bs-dismiss="modal"
           aria-label="Close"
-          routerLink="/main_page"
 
         ></button>
       </div>
       <div class="modal-body">
-        <form>
+        <form #f="ngForm">
           <div class="mb-3">
             <label
               for="confirmInput"
@@ -105,7 +104,9 @@
               >Postal Code:</label
             >
             <input
-            [(ngModel)]="client.postalCode" 
+            [(ngModel)]="client.postalCode"
+            (blur)="consultaCep(client.postalCode, f)"
+            #postalCode="ngModel"
             name="postalCode"
             type="text" 
             class="form-control" 
@@ -118,6 +119,7 @@
             >
             <input
             [(ngModel)]="client.address"
+            #address="ngModel"
             name="address"
             type="text" 
             class="form-control" 
@@ -130,6 +132,7 @@
             >
             <input
             [(ngModel)]="client.city" 
+            #city="ngModel"
             name="city"
             type="text" 
             class="form-control" 
@@ -171,7 +174,6 @@
             class="btn-close btn-close-white"
             data-bs-dismiss="modal"
             aria-label="Close"
-            routerLink="/main_page"
           ></button>
         </div>
         <div class="modal-body">
