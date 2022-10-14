@@ -57,8 +57,8 @@ export class ClientsComponent implements OnInit {
 
   populaDadosForm(dados:any, form:any) {
     form.setValue({
-        name: null,
-        lastName: null,
+        name: form.value.name,
+        lastName: form.value.lastName,
         postalCode: dados.cep,
         address: dados.logradouro,
         city: dados.localidade
